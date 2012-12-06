@@ -22,6 +22,8 @@ And then execute:
 
 ## Usage
 
+### JavaScript & Stylesheet
+
 Write the top of `app/assets/javascripts/application.js` like this:
 
 ```javascript
@@ -33,7 +35,54 @@ Write the top of `app/assets/javascripts/application.js` like this:
 //= require_tree .
 ```
 
+(You can choose `bootstrap-editable-inline`)
+
 and need to load `bootstrap-editable.css` at the place where you like.
+
+### HTML
+
+Follow the documents above.
+
+Additional required attribute(option) is `resource`.
+
+```html
+<a href="#" id="username" data-type="text" data-resource="post" data-name="username" data-url="/posts/1" data-original-title="Enter username">superuser</a>
+```
+
+then, sends `PUT /posts/1` request with the body:
+
+```
+post[username]=superuser
+```
+
+### Controller
+
+PostsController receives the parameters
+
+```
+{ "id" => "1", "post" => { "username" => "superuser" } }
+```
+
+and must respond with 2xx (means _success_) status code if successful.
+
+For example, scaffold goes well because default dataType is json.
+
+```ruby
+def update
+  @post = Post.find(params[:id])
+
+  respond_to do |format|
+    if @post.update_attributes(params[:post])
+      format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+      format.json { head :no_content } # 204 No Content
+    else
+      format.html { render action: "edit" }
+      format.json { render json: @post.errors, status: :unprocessable_entity }
+    end
+  end
+end
+```
+
 
 ## Contributing
 
