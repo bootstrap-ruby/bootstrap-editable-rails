@@ -2,7 +2,7 @@
 
 In-place editing with Twitter Bootstrap for Rails
 
-This gem is based on X-editable (v1.1.1) which is the new version of Bootstrap Editable.
+This gem is based on X-editable (v1.3.0) which is the new version of Bootstrap Editable.
 
 https://github.com/vitalets/x-editable
 
