@@ -41,7 +41,7 @@ and need to load `bootstrap-editable.css` at the place where you like.
 
 ### HTML
 
-Follow the documents above.
+Follow the documents of X-editable above.
 
 Additional required attribute(option) is `resource`.
 
@@ -53,6 +53,14 @@ then, sends `PUT /posts/1` request with the body:
 
 ```
 post[username]=superuser
+```
+
+When using `textarea` type, `textarea_format` helper method for formatting line breaks is available.
+
+```html
+<a href="#" id="body" data-type="textarea" data-resource="post" data-name="body" data-url="/posts/1" data-original-title="Enter body">
+  <%= textarea_format(@post.body) %>
+</a>
 ```
 
 ### Controller
