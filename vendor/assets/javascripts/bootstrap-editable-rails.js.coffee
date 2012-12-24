@@ -12,12 +12,14 @@ jQuery ($) ->
         originalUrl.call(@options.scope, params)
       else # send ajax to server and return deferred object
         obj = {}
-        data = {}
         obj[params.name] = params.value
-        data[resource] = obj
+        params[resource] = obj
+        delete params.name
+        delete params.value
+        delete params.pk
         $.ajax($.extend({
           url     : originalUrl
-          data    : data
+          data    : params
           type    : 'PUT' # TODO: should be 'POST' when create new object
           dataType: 'json'
         }, @options.ajaxOptions))
