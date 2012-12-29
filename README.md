@@ -55,6 +55,16 @@ then, sends `PUT /posts/1` request with the body:
 post[username]=superuser
 ```
 
+You can add attribute(option) `method` to change the REST method. Default is "PUT"
+
+```html
+<a href="#" id="username" data-method="POST" data-type="text" data-resource="post" data-name="username" data-url="/posts/1" data-original-title="Enter username">superuser</a>
+```
+
+then, sends `POST /posts` request
+this is needed to create new records
+
+
 When using `textarea` type, `textarea_format` helper method for formatting line breaks is available.
 
 ```html
