@@ -6,6 +6,7 @@ jQuery ($) ->
   EditableForm.prototype.saveWithUrlHook = (value) ->
     originalUrl = @options.url
     resource = @options.resource
+    methodType = @options.method || "PUT"
     @options.url = (params) =>
       # TODO: should not send when create new object
       if typeof originalUrl == 'function' # user's function
@@ -20,7 +21,7 @@ jQuery ($) ->
         $.ajax($.extend({
           url     : originalUrl
           data    : params
-          type    : 'PUT' # TODO: should be 'POST' when create new object
+          type    : methodType
           dataType: 'json'
         }, @options.ajaxOptions))
     @saveWithoutUrlHook(value)
