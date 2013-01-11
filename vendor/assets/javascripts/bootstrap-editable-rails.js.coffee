@@ -13,7 +13,11 @@ jQuery ($) ->
       else # send ajax to server and return deferred object
         obj = {}
         obj[params.name] = params.value
-        params[resource] = obj
+        # support custom inputtypes (eg address)
+        if resource
+          params[resource] = obj
+        else
+          params = obj
         delete params.name
         delete params.value
         delete params.pk
