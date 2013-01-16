@@ -25,7 +25,7 @@ jQuery ($) ->
           url     : originalUrl
           data    : params
           type    : 'PUT' # TODO: should be 'POST' when create new object
-          dataType: 'json'
+          dataType: 'script'
         }, @options.ajaxOptions))
     @saveWithoutUrlHook(value)
   EditableForm.prototype.saveWithoutUrlHook = EditableForm.prototype.save
