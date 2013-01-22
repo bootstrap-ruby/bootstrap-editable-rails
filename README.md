@@ -2,7 +2,7 @@
 
 In-place editing with Twitter Bootstrap for Rails
 
-This gem is based on X-editable (v1.3.0) which is the new version of Bootstrap Editable.
+This gem is based on X-editable (v1.4.1) which is the new version of Bootstrap Editable.
 
 https://github.com/vitalets/x-editable
 
@@ -35,15 +35,13 @@ Write the top of `app/assets/javascripts/application.js` like this:
 //= require_tree .
 ```
 
-(You can choose `bootstrap-editable-inline`)
-
 and need to load `bootstrap-editable.css` at the place where you like.
 
 ### HTML
 
 Follow the documents of X-editable above.
 
-Additional required attribute(option) is `resource`.
+Additional required attribute is `resource`.
 
 ```html
 <a href="#" id="username" data-type="text" data-resource="post" data-name="username" data-url="/posts/1" data-original-title="Enter username">superuser</a>
@@ -73,7 +71,7 @@ PostsController receives the parameters
 
 and must respond with 2xx (means _success_) status code if successful.
 
-For example, scaffold goes well because default dataType is json.
+For example, scaffold works well by 204 because default dataType is json.
 
 ```ruby
 def update
