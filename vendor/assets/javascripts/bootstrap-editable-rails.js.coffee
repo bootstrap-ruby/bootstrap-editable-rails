@@ -20,8 +20,8 @@ jQuery ($) ->
         else
           params = obj
 
-        if params == ""
-          params = null
+        if params.value == ""
+          params.value = null
 
         delete params.name
         delete params.value

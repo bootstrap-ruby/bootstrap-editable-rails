@@ -293,9 +293,6 @@ Editableform is linked with one of input types, e.g. 'text', 'select' etc.
                 }
 
                 if(typeof this.options.url === 'function') { //user's function
-                    if (params['value'] == "") {
-                        params['value'] = null;
-                    }
                     return this.options.url.call(this.options.scope, params);
                 } else {
                     //send ajax to server and return deferred object
