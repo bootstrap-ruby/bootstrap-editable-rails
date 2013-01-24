@@ -19,6 +19,10 @@ jQuery ($) ->
           params[resource] = obj
         else
           params = obj
+
+        if params == ""
+          params = null
+
         delete params.name
         delete params.value
         delete params.pk
