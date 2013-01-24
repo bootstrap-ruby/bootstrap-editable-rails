@@ -10,7 +10,8 @@ jQuery ($) ->
       # TODO: should not send when create new object
       if typeof originalUrl == 'function' # user's function
         originalUrl.call(@options.scope, params)
-      else # send ajax to server and return deferred object
+      else if originalUrl? && @options.send != 'never'
+        # send ajax to server and return deferred object
         obj = {}
         obj[params.name] = params.value
         # support custom inputtypes (eg address)
