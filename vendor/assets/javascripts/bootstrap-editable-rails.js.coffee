@@ -24,7 +24,7 @@ jQuery ($) ->
           params.value = null
 
         delete params.name
-        delete params.value
+        #delete params.value
         delete params.pk
         $.ajax($.extend({
           url     : originalUrl
