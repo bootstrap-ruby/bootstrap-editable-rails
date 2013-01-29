@@ -89,6 +89,23 @@ def update
 end
 ```
 
+#### Known issue
+
+The scaffold above will not work with jQuery 1.9.0 (included in jquery-rails 2.2.0) because of jQuery's bug.
+
+https://github.com/jquery/jquery/pull/1142
+
+To avoid it, you can do one of the following (and so on).
+
+1. Respond with some value, not empty
+
+ `format.json { render json: @post } # 200 OK`
+
+2. Not use jQuery 1.9.0
+
+ `gem 'jquery-rails', '2.1.4'` in Gemfile
+
+
 
 ## Contributing
 
