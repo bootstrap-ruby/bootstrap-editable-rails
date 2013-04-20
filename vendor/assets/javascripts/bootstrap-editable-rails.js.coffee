@@ -19,8 +19,12 @@ jQuery ($) ->
           params[resource] = obj
         else
           params = obj
+
+        if params.value == ""
+          params.value = null
+
         delete params.name
-        delete params.value
+        #delete params.value
         delete params.pk
         $.ajax($.extend({
           url     : originalUrl
