@@ -17,5 +17,5 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
-  gem.add_dependency "railties", "~> 3.1"
+  #gem.add_dependency "railties", "~> 3.1" so it's rails 4 compatible beta1 and rc1
 end
