@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["tkawa@4bit.net"]
   gem.description   = %q{In-place editing with Twitter Bootstrap for Rails}
   gem.summary       = %q{In-place editing with Twitter Bootstrap for Rails}
-  gem.homepage      = "https://github.com/tkawa/bootstrap-editable-rails"
+  gem.homepage      = "https://github.com/bootstrap-ruby/bootstrap-editable-rails"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }

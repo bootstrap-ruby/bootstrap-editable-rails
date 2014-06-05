@@ -1,8 +1,8 @@
 # Bootstrap Editable Rails
 
-In-place editing with Twitter Bootstrap for Rails
+In-place editing with Twitter Bootstrap for Rails 3/4
 
-This gem is based on X-editable (v1.4.1) which is the new version of Bootstrap Editable.
+This gem is based on X-editable (v1.5.1) which is the new version of Bootstrap Editable.
 
 https://github.com/vitalets/x-editable
 
@@ -89,22 +89,13 @@ def update
 end
 ```
 
-#### Known issue
+#### Note
 
 The scaffold above will not work with jQuery 1.9.0 (included in jquery-rails 2.2.0) because of jQuery's bug.
 
 https://github.com/jquery/jquery/pull/1142
 
-To avoid it, you can do one of the following (and so on).
-
-1. Respond with some value, not empty
-
- `format.json { render json: @post } # 200 OK`
-
-2. Not use jQuery 1.9.0
-
- `gem 'jquery-rails', '2.1.4'` in Gemfile
-
+If you use the old version of jQuery, please update jquery-rails to avoid it.
 
 
 ## Contributing
