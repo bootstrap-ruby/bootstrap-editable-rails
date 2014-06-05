@@ -5,10 +5,11 @@ module Bootstrap
   module Editable
     module Rails
       class Engine < ::Rails::Engine
-        initializer 'bootstrap-editable-rails' do
+        initializer 'bootstrap-editable-rails' do |app|
           ::ActiveSupport.on_load(:action_view) do
             ::ActionView::Base.send :include, Bootstrap::Editable::Rails::ViewHelper
           end
+          app.config.assets.precompile << %r(bootstrap-editable/.*\.(?:png|gif)$)
         end
       end
     end
