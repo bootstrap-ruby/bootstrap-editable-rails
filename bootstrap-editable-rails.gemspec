@@ -18,5 +18,5 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
 
   gem.add_dependency "railties", ">= 3.1"
-  gem.add_dependency "sass", "~> 3.4.15"
+  gem.add_dependency "sass-rails"
 end
