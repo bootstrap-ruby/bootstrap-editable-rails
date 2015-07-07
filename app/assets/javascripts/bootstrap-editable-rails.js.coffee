@@ -26,7 +26,7 @@ jQuery ($) ->
           $.ajax($.extend({
             url     : originalUrl
             data    : params
-            type    : 'PUT' # TODO: should be 'POST' when create new object
+            type    : 'PATCH' # TODO: should be 'POST' when create new object
             dataType: 'json'
           }, @options.ajaxOptions))
       @saveWithoutUrlHook(value)
