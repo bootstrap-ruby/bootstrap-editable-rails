@@ -9,7 +9,7 @@ module Bootstrap
           ::ActiveSupport.on_load(:action_view) do
             ::ActionView::Base.send :include, Bootstrap::Editable::Rails::ViewHelper
           end
-          app.config.assets.precompile << %r(bootstrap-editable/.*\.(?:png|gif)$)
+          app.config.assets.precompile << "bootstrap-editable/**/*.{gif,png}"
         end
       end
     end
